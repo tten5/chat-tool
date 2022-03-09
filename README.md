@@ -14,3 +14,4 @@ npm run serve
 ```
 node index 
 ```
+![Alt text](msgs.gif)
