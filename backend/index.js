@@ -6,6 +6,10 @@ const socketio = require('socket.io')
 // init and connect db
 const { runDBInit } = require('./models')
 
+// for auto documentation 
+const swaggerUi = require('swagger-ui-express');
+const docs = require('./docs');
+
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
@@ -33,7 +37,9 @@ async function main() {
 
     // set up routes api 
     app.use(require('./routes'));
-      
+    
+    app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(docs));
+
     //handling all other request to any route that don't match with any route we have written above
     app.all('*', (req, res, next) => {
         let err = new Error('Page Not Found')

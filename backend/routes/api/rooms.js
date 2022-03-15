@@ -12,12 +12,12 @@ router.get('/', async (req, res) => {
     try {
         rooms = await roomsClt.find({}).toArray();
     } catch (error) {
-    if (error instanceof MongoServerError) {
-        console.log(`Error worth logging: ${error}`); // special case for some reason
+        if (error instanceof MongoServerError) {
+            console.log(`Error worth logging: ${error}`); // special case for some reason
+        }
+        res.status(404).json("Cannot get rooms")
+        throw error; // still want to crash
     }
-    throw error; // still want to crash
-    }
-
     res.json(rooms);
 });
 

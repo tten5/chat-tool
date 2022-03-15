@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
         }
         res.json(msgs);
     }
-    return null
+    res.status(404).json("Cannot get messages");
 })
 
 module.exports = router
