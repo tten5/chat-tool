@@ -1,5 +1,6 @@
 # chat-tool
-chat-tool created with Nodejs, MongoDB, Vuejs and socket.io
+chat-tool created with Nodejs, MongoDB, Vuejs and socket.io <br>
+Auto documentation is created with `swagger`
 
 - frontend: port `8080`
 - backend: port `3000`
@@ -14,4 +15,11 @@ npm run serve
 ```
 node index 
 ```
+
+## Hide/show on click 
 ![Alt text](msgs.gif)
+
+## Swagger UI example 
+
+![Alt text](swagger-UI-example.gif)
+
