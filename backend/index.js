@@ -1,5 +1,5 @@
 const express = require('express')
-// const path = require('path')
+const path = require('path')
 const http = require('http') 
 const socketio = require('socket.io')
 
@@ -28,7 +28,7 @@ async function main() {
     app.set('io', io) // this line help attaching socket io instance to `req`
 
     // public dir for frontend
-    // app.use(express.static(path.join(__dirname, '../vue-ui/dist')));
+    app.use(express.static(path.join(__dirname, '../vue-ui/dist')));
 
     app.get('/', (req,res) => {
         // res.sendFile(path.join(__dirname, '../vue-ui/dist/index.html'));
@@ -68,4 +68,4 @@ async function main() {
 
 }
 
-main().catch(console.error)
+main().catch(console.log)
