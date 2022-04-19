@@ -30,8 +30,7 @@ async function main() {
     // public dir for frontend
     app.use(express.static(path.join(__dirname, '../vue-ui/dist')));
 
-    app.get('/', (req,res) => {
-        // res.sendFile(path.join(__dirname, '../vue-ui/dist/index.html'));
+    app.get('/api/v1/health', (req,res) => {
         res.json("chat-tool is running")
     });
 
